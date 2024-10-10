@@ -19,5 +19,4 @@ public class ConcreteShapeFactory implements ShapeFactory {
     public Shape createSquare(double side) {
         return new Square(side);
     }
-
 }
