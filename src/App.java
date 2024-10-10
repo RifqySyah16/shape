@@ -1,16 +1,17 @@
 import contract.Shape;
-import implementation.Circle;
-import implementation.Rectangle;
-import implementation.Square;
+import contract.ShapeFactory;
+import implementation.ConcreteShapeFactory;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Shape rectangle = new Rectangle(10.5, 5);
-        Shape circle = new Circle(10);
-        Shape square = new Square(4);
+        ShapeFactory shapeFactory = new ConcreteShapeFactory();
 
-        printShapeDetails(rectangle);
+        Shape circle = shapeFactory.createRectangle(10.5, 5);
+        Shape rectangle = shapeFactory.createCircle(10);
+        Shape square = shapeFactory.createSquare(4);
+
         printShapeDetails(circle);
+        printShapeDetails(rectangle);
         printShapeDetails(square);
     }
 
